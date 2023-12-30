@@ -4,14 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>this is index</title>
+    <title>Your Name - Personal Website</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 0.5em;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        #clock {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 1em;
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>
-        this is a h1 tag that im using!!!
-    </h1>
-    <a href="aboutme.html" class="btn btn-info" role="button">Link Button</a>
+
+    <header>
+        <h1>Your Name</h1>
+        <p>Welcome to My Personal Website</p>
+    </header>
+
+    <nav>
+        <a href="aboutme.html">About Me</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <div id="clock"></div>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Write a brief introduction about yourself here.</p>
+        </section>
+
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <p>Showcase your work, projects, or achievements.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Provide contact information or a contact form.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function updateTime() {
+            const clock = document.getElementById('clock');
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            clock.textContent = timeString;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+
+        // Initial call to set the time immediately
+        updateTime();
+    </script>
+
 </body>
 
 </html>
